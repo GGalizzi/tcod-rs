@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `tcod_print!` macro in crate `tcod`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, tcod_print!">
+
+    <title>tcod::tcod_print! - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='index.html'>tcod</a></p><script>window.sidebarCurrent = {name: 'tcod_print!', ty: 'macro', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content macro">
+<h1 class='fqn'><span class='in-band'><a href='index.html'>tcod</a>::<wbr><a class='macro' href=''>tcod_print!</a><wbr></span><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]</a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-14854' href='../src/tcod/console_macros.rs.html#2-106'>[src]</a></span></h1>
+<pre class='rust macro'>
+<span class='macro'>macro_rules</span><span class='macro'>!</span> <span class='ident'>tcod_print</span> {
+    <span class='comment'>// ABW</span>
+    (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>: <span class='ident'>expr</span>, <span class='ident'>At</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>: <span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>: <span class='ident'>expr</span>), <span class='ident'>Align</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>alignment</span>: <span class='ident'>expr</span>),
+     <span class='ident'>Bg</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>bg</span>: <span class='ident'>expr</span>), <span class='ident'>Wrap</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>width</span>: <span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>height</span>: <span class='ident'>expr</span>), $(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>: <span class='ident'>tt</span>)<span class='op'>*</span>) <span class='op'>=&gt;</span> (
+        <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>.<span class='ident'>print_rect_ex</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>width</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>height</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>bg</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>alignment</span>, <span class='macro'>format</span><span class='macro'>!</span>($(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>)<span class='op'>*</span>));
+    );
+
+    <span class='comment'>// AWB</span>
+    (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>: <span class='ident'>expr</span>, <span class='ident'>At</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>: <span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>: <span class='ident'>expr</span>), <span class='ident'>Align</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>alignment</span>: <span class='ident'>expr</span>),
+     <span class='ident'>Wrap</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>width</span>: <span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>height</span>: <span class='ident'>expr</span>), <span class='ident'>Bg</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>bg</span>: <span class='ident'>expr</span>), $(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>: <span class='ident'>tt</span>)<span class='op'>*</span>) <span class='op'>=&gt;</span> (
+        <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>.<span class='ident'>print_rect_ex</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>width</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>height</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>bg</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>alignment</span>, <span class='macro'>format</span><span class='macro'>!</span>($(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>)<span class='op'>*</span>));
+    );
+
+    <span class='comment'>// BAW</span>
+    (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>: <span class='ident'>expr</span>, <span class='ident'>At</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>: <span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>: <span class='ident'>expr</span>), <span class='ident'>Bg</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>bg</span>: <span class='ident'>expr</span>),
+     <span class='ident'>Align</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>alignment</span>: <span class='ident'>expr</span>), <span class='ident'>Wrap</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>width</span>: <span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>height</span>: <span class='ident'>expr</span>), $(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>: <span class='ident'>tt</span>)<span class='op'>*</span>) <span class='op'>=&gt;</span> (
+        <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>.<span class='ident'>print_rect_ex</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>width</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>height</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>bg</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>alignment</span>, <span class='macro'>format</span><span class='macro'>!</span>($(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>)<span class='op'>*</span>));
+    );
+
+    <span class='comment'>// BWA</span>
+    (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>: <span class='ident'>expr</span>, <span class='ident'>At</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>: <span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>: <span class='ident'>expr</span>), <span class='ident'>Bg</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>bg</span>: <span class='ident'>expr</span>),
+     <span class='ident'>Wrap</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>width</span>: <span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>height</span>: <span class='ident'>expr</span>), <span class='ident'>Align</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>alignment</span>: <span class='ident'>expr</span>), $(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>: <span class='ident'>tt</span>)<span class='op'>*</span>) <span class='op'>=&gt;</span> (
+        <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>.<span class='ident'>print_rect_ex</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>width</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>height</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>bg</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>alignment</span>, <span class='macro'>format</span><span class='macro'>!</span>($(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>)<span class='op'>*</span>));
+    );
+
+    <span class='comment'>// WAB</span>
+    (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>: <span class='ident'>expr</span>, <span class='ident'>At</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>: <span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>: <span class='ident'>expr</span>), <span class='ident'>Wrap</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>width</span>: <span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>height</span>: <span class='ident'>expr</span>),
+     <span class='ident'>Align</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>alignment</span>: <span class='ident'>expr</span>), <span class='ident'>Bg</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>bg</span>: <span class='ident'>expr</span>), $(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>: <span class='ident'>tt</span>)<span class='op'>*</span>) <span class='op'>=&gt;</span> (
+        <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>.<span class='ident'>print_rect_ex</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>width</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>height</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>bg</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>alignment</span>, <span class='macro'>format</span><span class='macro'>!</span>($(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>)<span class='op'>*</span>));
+    );
+
+    <span class='comment'>// WBA</span>
+    (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>: <span class='ident'>expr</span>, <span class='ident'>At</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>: <span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>: <span class='ident'>expr</span>), <span class='ident'>Wrap</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>width</span>: <span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>height</span>: <span class='ident'>expr</span>),
+     <span class='ident'>Bg</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>bg</span>: <span class='ident'>expr</span>), <span class='ident'>Align</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>alignment</span>: <span class='ident'>expr</span>), $(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>: <span class='ident'>tt</span>)<span class='op'>*</span>) <span class='op'>=&gt;</span> (
+        <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>.<span class='ident'>print_rect_ex</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>width</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>height</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>bg</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>alignment</span>, <span class='macro'>format</span><span class='macro'>!</span>($(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>)<span class='op'>*</span>));
+    );
+
+    <span class='comment'>// AB</span>
+    (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>: <span class='ident'>expr</span>, <span class='ident'>At</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>: <span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>: <span class='ident'>expr</span>), <span class='ident'>Align</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>bg</span>: <span class='ident'>expr</span>), <span class='ident'>Bg</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>alignment</span>: <span class='ident'>expr</span>), $(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>: <span class='ident'>tt</span>)<span class='op'>*</span>) <span class='op'>=&gt;</span> (
+        <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>.<span class='ident'>print_ex</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>bg</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>alignment</span>, <span class='macro'>format</span><span class='macro'>!</span>($(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>)<span class='op'>*</span>));
+    );
+
+    <span class='comment'>// AW</span>
+    (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>: <span class='ident'>expr</span>, <span class='ident'>At</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>: <span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>: <span class='ident'>expr</span>), <span class='ident'>Align</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>alignment</span>: <span class='ident'>expr</span>), <span class='ident'>Wrap</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>width</span>: <span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>height</span>: <span class='ident'>expr</span>), $(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>: <span class='ident'>tt</span>)<span class='op'>*</span>) <span class='op'>=&gt;</span> (
+        {
+            <span class='kw'>let</span> <span class='ident'>bg</span> <span class='op'>=</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>.<span class='ident'>get_background_flag</span>();
+            <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>.<span class='ident'>print_rect_ex</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>width</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>height</span>, <span class='ident'>bg</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>alignment</span>, <span class='macro'>format</span><span class='macro'>!</span>($(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>)<span class='op'>*</span>));
+        }
+    );
+
+    <span class='comment'>// BA</span>
+    (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>: <span class='ident'>expr</span>, <span class='ident'>At</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>: <span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>: <span class='ident'>expr</span>), <span class='ident'>Bg</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>bg</span>: <span class='ident'>expr</span>), <span class='ident'>Align</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>alignment</span>: <span class='ident'>expr</span>), $(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>: <span class='ident'>tt</span>)<span class='op'>*</span>) <span class='op'>=&gt;</span> (
+        <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>.<span class='ident'>print_ex</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>bg</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>alignment</span>, <span class='macro'>format</span><span class='macro'>!</span>($(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>)<span class='op'>*</span>));
+    );
+
+    <span class='comment'>// BW</span>
+    (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>: <span class='ident'>expr</span>, <span class='ident'>At</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>: <span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>: <span class='ident'>expr</span>), <span class='ident'>Bg</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>bg</span>: <span class='ident'>expr</span>), <span class='ident'>Wrap</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>width</span>: <span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>height</span>: <span class='ident'>expr</span>), $(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>: <span class='ident'>tt</span>)<span class='op'>*</span>) <span class='op'>=&gt;</span> (
+        {
+            <span class='kw'>let</span> <span class='ident'>alignment</span> <span class='op'>=</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>.<span class='ident'>get_alignment</span>();
+            <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>.<span class='ident'>print_rect_ex</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>width</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>height</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>bg</span>, <span class='ident'>alignment</span>, <span class='macro'>format</span><span class='macro'>!</span>($(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>)<span class='op'>*</span>));
+        }
+    );
+
+    <span class='comment'>// WA</span>
+    (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>: <span class='ident'>expr</span>, <span class='ident'>At</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>: <span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>: <span class='ident'>expr</span>), <span class='ident'>Wrap</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>width</span>: <span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>height</span>: <span class='ident'>expr</span>), <span class='ident'>Align</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>alignment</span>: <span class='ident'>expr</span>), $(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>: <span class='ident'>tt</span>)<span class='op'>*</span>) <span class='op'>=&gt;</span> (
+        {
+            <span class='kw'>let</span> <span class='ident'>bg</span> <span class='op'>=</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>.<span class='ident'>get_background_flag</span>();
+            <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>.<span class='ident'>print_rect_ex</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>width</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>height</span>, <span class='ident'>bg</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>alignment</span>, <span class='macro'>format</span><span class='macro'>!</span>($(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>)<span class='op'>*</span>));
+        }
+    );
+
+    <span class='comment'>// WB</span>
+    (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>: <span class='ident'>expr</span>, <span class='ident'>At</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>: <span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>: <span class='ident'>expr</span>), <span class='ident'>Wrap</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>width</span>: <span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>height</span>: <span class='ident'>expr</span>), <span class='ident'>Bg</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>bg</span>: <span class='ident'>expr</span>), $(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>: <span class='ident'>tt</span>)<span class='op'>*</span>) <span class='op'>=&gt;</span> (
+        {
+            <span class='kw'>let</span> <span class='ident'>alignment</span> <span class='op'>=</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>.<span class='ident'>get_alignment</span>();
+            <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>.<span class='ident'>print_rect_ex</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>width</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>height</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>bg</span>, <span class='ident'>alignment</span>, <span class='macro'>format</span><span class='macro'>!</span>($(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>)<span class='op'>*</span>));
+        }
+    );
+
+    <span class='comment'>// A</span>
+    (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>: <span class='ident'>expr</span>, <span class='ident'>At</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>: <span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>: <span class='ident'>expr</span>), <span class='ident'>Align</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>alignment</span>: <span class='ident'>expr</span>), $(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>: <span class='ident'>tt</span>)<span class='op'>*</span>) <span class='op'>=&gt;</span> (
+        {
+            <span class='kw'>let</span> <span class='ident'>bg</span> <span class='op'>=</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>.<span class='ident'>get_background_flag</span>();
+            <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>.<span class='ident'>print_ex</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>, <span class='ident'>bg</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>alignment</span>, <span class='macro'>format</span><span class='macro'>!</span>($(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>)<span class='op'>*</span>));
+        }
+    );
+
+    <span class='comment'>// B</span>
+    (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>: <span class='ident'>expr</span>, <span class='ident'>At</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>: <span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>: <span class='ident'>expr</span>), <span class='ident'>Bg</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>bg</span>: <span class='ident'>expr</span>), $(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>: <span class='ident'>tt</span>)<span class='op'>*</span>) <span class='op'>=&gt;</span> (
+        {
+            <span class='kw'>let</span> <span class='ident'>alignment</span> <span class='op'>=</span> <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>.<span class='ident'>get_alignment</span>();
+            <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>.<span class='ident'>print_ex</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>bg</span>, <span class='ident'>alignment</span>, <span class='macro'>format</span><span class='macro'>!</span>($(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>)<span class='op'>*</span>));
+        }
+    );
+
+    <span class='comment'>// W</span>
+    (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>: <span class='ident'>expr</span>, <span class='ident'>At</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>: <span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>: <span class='ident'>expr</span>), <span class='ident'>Wrap</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>width</span>: <span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>height</span>: <span class='ident'>expr</span>), $(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>: <span class='ident'>tt</span>)<span class='op'>*</span>) <span class='op'>=&gt;</span> (
+        <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>.<span class='ident'>print_rect</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>width</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>height</span>, <span class='macro'>format</span><span class='macro'>!</span>($(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>)<span class='op'>*</span>));
+    );
+
+    <span class='comment'>// None</span>
+    (<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>: <span class='ident'>expr</span>, <span class='ident'>At</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>: <span class='ident'>expr</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>: <span class='ident'>expr</span>), $(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>: <span class='ident'>tt</span>)<span class='op'>*</span>) <span class='op'>=&gt;</span> (
+        <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>con</span>.<span class='ident'>print</span>(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>x</span>, <span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>y</span>, <span class='macro'>format</span><span class='macro'>!</span>($(<span class='macro-nonterminal'>$</span><span class='macro-nonterminal'>arg</span>)<span class='op'>*</span>));
+    );
+}
+</pre>
+</section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "tcod";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script async src="../search-index.js"></script>
+</body>
+</html>
